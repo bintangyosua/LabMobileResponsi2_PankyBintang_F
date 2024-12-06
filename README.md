@@ -1,4 +1,4 @@
-# Tugas 7 Praktikum Pemrograman Mobile
+# Responsi 2 Praktikum Pemrograman Mobile
 
 ```yml
 Nama: Panky Bintang Pradana Yosua
