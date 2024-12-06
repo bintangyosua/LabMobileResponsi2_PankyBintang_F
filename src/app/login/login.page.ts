@@ -29,12 +29,13 @@ export class LoginPage implements OnInit {
             this.authService.saveData(res.token, res.username);
             this.username = '';
             this.password = '';
-            this.router.navigateByUrl('/mahasiswa');
+            this.router.navigateByUrl('/mulan');
           } else {
             this.authService.notifikasi('Username atau Password Salah');
           }
         },
         error: (e) => {
+          console.error(e)
           this.authService.notifikasi(
             'Login Gagal Periksa Koneksi Internet Anda'
           );

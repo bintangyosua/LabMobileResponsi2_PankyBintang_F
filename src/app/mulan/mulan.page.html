@@ -1,13 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Data Mahasiswa</ion-title>
+    <ion-title>Data Mulan</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Data Mahasiswa </ion-title>
+      <ion-title size="large">Data Mulan </ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-item (click)="logout()" style="cursor: pointer;">
@@ -17,7 +17,7 @@
   <!-- button tambah -->
   <ion-card>
     <ion-button (click)="openModalTambah(true)" expand="block" color="tertiary"
-      >Tambah Mahasiswa
+      >Tambah Mulan
       <ion-icon name="add-outline"></ion-icon>
     </ion-button>
   </ion-card>
@@ -29,41 +29,34 @@
           <ion-buttons slot="start">
             <ion-button (click)="cancel()">Batal</ion-button>
           </ion-buttons>
-          <ion-title>Tambah Mahasiswa</ion-title>
+          <ion-title>Tambah Mulan</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
         <ion-item>
           <ion-input
-            label="Nama Mahasiswa"
+            label="Nama Mulan"
             labelPlacement="floating"
             required
             [(ngModel)]="nama"
-            placeholder="Masukkan Nama Mahasiswa"
+            placeholder="Masukkan Nama Mulan"
             type="text"
           >
           </ion-input>
         </ion-item>
         <ion-item>
-          <ion-input
-            label="Jurusan Mahasiswa"
-            labelPlacement="floating"
-            required
-            [(ngModel)]="jurusan"
-            placeholder="Masukkan Jurusan Mahasiswa"
-            type="text"
-          >
-          </ion-input>
+          <ion-textarea label="Story" labelPlacement="floating" placeholder="Enter story" required [(ngModel)]="story">
+          </ion-textarea>
         </ion-item>
         <ion-row>
           <ion-col>
             <ion-button
               type="button"
-              (click)="tambahMahasiswa()"
+              (click)="tambahMulan()"
               color="tertiary"
               shape="full"
               expand="block"
-              >Tambah Mahasiswa
+              >Tambah Mulan
               <ion-icon name="add-outline"></ion-icon>
             </ion-button>
           </ion-col>
@@ -72,11 +65,11 @@
     </ng-template>
   </ion-modal>
 
-  <ion-card *ngFor="let item of dataMahasiswa">
+  <ion-card *ngFor="let item of dataMulan">
     <ion-item>
       <ion-label>
         {{item.nama}}
-        <p>{{item.jurusan}}</p>
+        <p>{{item.story}}</p>
       </ion-label>
       <ion-button
         expand="block"
@@ -85,10 +78,10 @@
         >Edit</ion-button
       >
       <ion-button
-        id="hapus-mahasiswa"
+        id="hapus-mulan"
         color="danger"
         slot="end"
-        (click)="konfirmasiHapus({id: item.id, nama: item.nama, jurusan: item.jurusan})"
+        (click)="konfirmasiHapus({id: item.id, nama: item.nama, story: item.story})"
         >Hapus</ion-button
       >
     </ion-item>
@@ -102,42 +95,35 @@
           <ion-buttons slot="start">
             <ion-button (click)="cancel()">Batal</ion-button>
           </ion-buttons>
-          <ion-title>Edit Mahasiswa</ion-title>
+          <ion-title>Edit Mulan</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
         <ion-item>
           <ion-input
-            label="Nama Mahasiswa"
+            label="Nama Mulan"
             labelPlacement="floating"
             required
             [(ngModel)]="nama"
-            placeholder="Masukkan Nama Mahasiswa"
+            placeholder="Masukkan Nama Mulan"
             type="text"
           >
           </ion-input>
         </ion-item>
         <ion-item>
-          <ion-input
-            label="Jurusan Mahasiswa"
-            labelPlacement="floating"
-            required
-            [(ngModel)]="jurusan"
-            placeholder="Masukkan Jurusan Mahasiswa"
-            type="text"
-          >
-          </ion-input>
+          <ion-textarea label="Story" labelPlacement="floating" placeholder="Enter story" required [(ngModel)]="story">
+          </ion-textarea>
         </ion-item>
-        <ion-input required [(ngModel)]="id" type="hidden"> </ion-input>
+      <ion-input required [(ngModel)]="id" type="hidden"> </ion-input>
         <ion-row>
           <ion-col>
             <ion-button
               type="button"
-              (click)="editMahasiswa()"
+              (click)="editMulan()"
               color="tertiary"
               shape="full"
               expand="block"
-              >Edit Mahasiswa
+              >Edit Mulan
             </ion-button>
           </ion-col>
         </ion-row>

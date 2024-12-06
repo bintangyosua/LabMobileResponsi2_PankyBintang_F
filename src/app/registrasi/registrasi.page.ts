@@ -29,7 +29,7 @@ export class RegistrasiPage implements OnInit {
           this.authService.saveData(res.token, res.username);
           this.username = '';
           this.password = '';
-          this.router.navigateByUrl('/mahasiswa');
+          this.router.navigateByUrl('/mulan');
         },
         error: (e) => {
           console.log({e})

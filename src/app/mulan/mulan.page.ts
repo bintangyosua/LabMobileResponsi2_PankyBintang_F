@@ -7,16 +7,16 @@ import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-mahasiswa',
-  templateUrl: './mahasiswa.page.html',
-  styleUrls: ['./mahasiswa.page.scss'],
+  selector: 'app-mulan',
+  templateUrl: './mulan.page.html',
+  styleUrls: ['./mulan.page.scss'],
 })
-export class MahasiswaPage implements OnInit {
-  dataMahasiswa: any;
+export class MulanPage implements OnInit {
+  dataMulan: any;
   modalTambah: any;
   id: any;
   nama: any;
-  jurusan: any;
+  story: any;
   modalEdit: any;
 
   constructor(
@@ -30,13 +30,13 @@ export class MahasiswaPage implements OnInit {
   }
 
   ngOnInit() {
-    this.getMahasiswa();
+    this.getMulan();
   }
 
   resetModal() {
     this.id = null;
     this.nama = '';
-    this.jurusan = '';
+    this.story = '';
   }
 
 
@@ -45,41 +45,42 @@ export class MahasiswaPage implements OnInit {
     this.router.navigateByUrl('/login');
   }
 
-  tambahMahasiswa() {
-    if (this.nama != '' && this.jurusan != '') {
+  tambahMulan() {
+    if (this.nama != '' && this.story != '') {
       let data = {
         nama: this.nama,
-        jurusan: this.jurusan,
+        story: this.story,
       };
       this.api.tambah(data, 'tambah.php').subscribe({
         next: (hasil: any) => {
           this.resetModal();
-          console.log('berhasil tambah mahasiswa');
-          this.getMahasiswa();
+          console.log('berhasil tambah mulan');
+          this.getMulan();
           this.modalTambah = false;
           this.modal.dismiss();
         },
         error: (err: any) => {
-          console.log('gagal tambah mahasiswa');
+          console.error(err)
+          console.log('gagal tambah mulan');
         },
       });
     } else {
-      console.log('gagal tambah mahasiswa karena masih ada data yg kosong');
+      console.log('gagal tambah mulan karena masih ada data yg kosong');
     }
   }
 
   async konfirmasiHapus({
     id,
     nama,
-    jurusan,
+    story,
   }: {
     id: number;
     nama: string;
-    jurusan: string;
+    story: string;
   }) {
     const alert = await this.alert.create({
       header: 'Hapus',
-      message: `Apakah anda yakin ingin menghapus data Mahasiswa dengan nama ${nama} dari jurusan ${jurusan}?`,
+      message: `Apakah anda yakin ingin menghapus data Mulan dengan nama ${nama} dari story ${story}?`,
       buttons: [
         {
           text: 'Batal',
@@ -90,7 +91,7 @@ export class MahasiswaPage implements OnInit {
           text: 'Hapus',
           role: 'confirm',
           handler: () => {
-            this.hapusMahasiswa(id);
+            this.hapusMulan(id);
             return;
           },
         },
@@ -100,11 +101,11 @@ export class MahasiswaPage implements OnInit {
     await alert.present();
   }
 
-  hapusMahasiswa(id: any) {
+  hapusMulan(id: any) {
     this.api.hapus(id, 'hapus.php?id=').subscribe({
       next: (res: any) => {
         console.log('sukses', res);
-        this.getMahasiswa();
+        this.getMulan();
         console.log('berhasil hapus data');
       },
       error: (error: any) => {
@@ -115,35 +116,35 @@ export class MahasiswaPage implements OnInit {
     return;
   }
 
-  editMahasiswa() {
+  editMulan() {
     let data = {
       id: this.id,
       nama: this.nama,
-      jurusan: this.jurusan,
+      story: this.story,
     };
     this.api.edit(data, 'edit.php').subscribe({
       next: (hasil: any) => {
         console.log(hasil);
         this.resetModal();
-        this.getMahasiswa();
-        console.log('berhasil edit Mahasiswa');
+        this.getMulan();
+        console.log('berhasil edit Mulan');
         this.modalEdit = false;
         this.modal.dismiss();
       },
       error: (err: any) => {
-        console.log('gagal edit Mahasiswa');
+        console.log('gagal edit Mulan');
       },
     });
   }
 
-  ambilMahasiswa(id: any) {
+  ambilMulan(id: any) {
     this.api.lihat(id, 'lihat.php?id=').subscribe({
       next: (hasil: any) => {
         console.log('sukses', hasil);
-        let mahasiswa = hasil;
-        this.id = mahasiswa.id;
-        this.nama = mahasiswa.nama;
-        this.jurusan = mahasiswa.jurusan;
+        let mulan = hasil;
+        this.id = mulan.id;
+        this.nama = mulan.nama;
+        this.story = mulan.story;
       },
       error: (error: any) => {
         console.log('gagal ambil data');
@@ -165,11 +166,11 @@ export class MahasiswaPage implements OnInit {
     this.resetModal();
   }
 
-  getMahasiswa() {
+  getMulan() {
     this.api.tampil('tampil.php').subscribe({
       next: (res: any) => {
         console.log('sukses', res);
-        this.dataMahasiswa = res;
+        this.dataMulan = res;
       },
       error: (err: any) => {
         console.log(err);
@@ -181,7 +182,7 @@ export class MahasiswaPage implements OnInit {
     this.modalEdit = isOpen;
     this.id = idget;
     console.log(this.id);
-    this.ambilMahasiswa(this.id);
+    this.ambilMulan(this.id);
     this.modalTambah = false;
     this.modalEdit = true;
   }

@@ -5,9 +5,9 @@ import { autoLoginGuard } from './guards/auto-login.guard';
 
 const routes: Routes = [
   {
-    path: 'mahasiswa',
+    path: 'mulan',
     loadChildren: () =>
-      import('./mahasiswa/mahasiswa.module').then((m) => m.MahasiswaPageModule),
+      import('./mulan/mulan.module').then((m) => m.MulanPageModule),
     canActivate: [authGuard],
   },
   {
