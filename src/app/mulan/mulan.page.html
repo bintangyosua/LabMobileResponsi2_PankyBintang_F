@@ -17,7 +17,7 @@
   <!-- button tambah -->
   <ion-card>
     <ion-button (click)="openModalTambah(true)" expand="block" color="tertiary"
-      >Tambah Mulan
+      >Tambah Pahlawan
       <ion-icon name="add-outline"></ion-icon>
     </ion-button>
   </ion-card>
@@ -29,17 +29,17 @@
           <ion-buttons slot="start">
             <ion-button (click)="cancel()">Batal</ion-button>
           </ion-buttons>
-          <ion-title>Tambah Mulan</ion-title>
+          <ion-title>Tambah Pahlawan</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
         <ion-item>
           <ion-input
-            label="Nama Mulan"
+            label="Nama Pahlawan"
             labelPlacement="floating"
             required
             [(ngModel)]="nama"
-            placeholder="Masukkan Nama Mulan"
+            placeholder="Masukkan Nama Pahlawan"
             type="text"
           >
           </ion-input>
@@ -56,7 +56,7 @@
               color="tertiary"
               shape="full"
               expand="block"
-              >Tambah Mulan
+              >Tambah Pahlawan
               <ion-icon name="add-outline"></ion-icon>
             </ion-button>
           </ion-col>
@@ -95,17 +95,17 @@
           <ion-buttons slot="start">
             <ion-button (click)="cancel()">Batal</ion-button>
           </ion-buttons>
-          <ion-title>Edit Mulan</ion-title>
+          <ion-title>Edit Pahlawan</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
         <ion-item>
           <ion-input
-            label="Nama Mulan"
+            label="Nama Pahlawan"
             labelPlacement="floating"
             required
             [(ngModel)]="nama"
-            placeholder="Masukkan Nama Mulan"
+            placeholder="Masukkan Nama Pahlawan"
             type="text"
           >
           </ion-input>
@@ -123,7 +123,7 @@
               color="tertiary"
               shape="full"
               expand="block"
-              >Edit Mulan
+              >Edit Pahlawan
             </ion-button>
           </ion-col>
         </ion-row>
