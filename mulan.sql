@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 06, 2024 at 07:39 AM
+-- Generation Time: Dec 09, 2024 at 02:02 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.2.18
 
@@ -40,7 +40,8 @@ CREATE TABLE `mulan` (
 INSERT INTO `mulan` (`id`, `nama`, `story`) VALUES
 (3, 'Fa Mulan', 'Tokoh utama cerita ini, seorang gadis muda yang cerdas, berani, dan sangat mencintai keluarganya. Mulan menyamar sebagai pria untuk menggantikan ayahnya yang sudah tua dan tidak mampu berperang, dengan tujuan melindungi kehormatan keluarga mereka.'),
 (7, 'Fa Li', 'Ibu Mulan, seorang wanita yang penuh kasih sayang. Dia peduli terhadap Mulan, meskipun cemas tentang keputusan Mulan untuk menyamar sebagai pria dan berperang. Fa Li juga sangat mendukung keputusan Mulan pada akhirnya.'),
-(8, 'Fa Zhou', 'Ayah Mulan, seorang prajurit yang sudah tua dan lemah. Karena usia dan kesehatannya, dia tidak dapat bergabung dalam peperangan. Mulan sangat menghormati ayahnya dan berusaha melindunginya dengan menyamar.');
+(8, 'Fa Zhou', 'Ayah Mulan, seorang prajurit yang sudah tua dan lemah. Karena usia dan kesehatannya, dia tidak dapat bergabung dalam peperangan. Mulan sangat menghormati ayahnya dan berusaha melindunginya dengan menyamar.'),
+(17, 'Sashiko', 'Bukan OHIO, tapi OITA');
 
 -- --------------------------------------------------------
 
@@ -58,10 +59,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `password`) VALUES
-('brian', '929064f2a141f812f1c2efb3ff8194ca'),
-('', 'd41d8cd98f00b204e9800998ecf8427e'),
 ('bintang', '202cb962ac59075b964b07152d234b70'),
-('', 'd41d8cd98f00b204e9800998ecf8427e'),
 ('minuettaro', '202cb962ac59075b964b07152d234b70');
 
 --
@@ -82,7 +80,7 @@ ALTER TABLE `mulan`
 -- AUTO_INCREMENT for table `mulan`
 --
 ALTER TABLE `mulan`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
